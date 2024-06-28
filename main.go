@@ -6,6 +6,7 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 
 	helloworldpb "grpcgateway/api/helloworld/v1"
 )
@@ -33,6 +34,9 @@ func main() {
 	s := grpc.NewServer()
 	// Attach the Greeter service to the server
 	helloworldpb.RegisterGreeterServer(s, &server{})
+
+	// Enable reflection to allow clients query the server's services.
+	reflection.Register(s)
 	// Serve gRPC Server
 	log.Println("Serving gRPC on 0.0.0.0:8080")
 	log.Fatal(s.Serve(lis))
