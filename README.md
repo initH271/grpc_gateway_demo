@@ -6,7 +6,7 @@ grpc 相比REST HTTP服务没有默认的速度优势, 但是它提供了一些�
 - 等
 grpc并不是万能的工具. 比如因为兼容性易维护的等需求, 我想提供一个传统的HTTP/JSON式的API.但是另写一份HTTP/JSON的API服务又是非常耗时的一件事. 社区提出的gRPC-Gateway项目解决了这个问题.
 
-gRPC-Gateway是protoc编译器的一个插件, 它读取protobuf的服务定义并生成一个反向代理服务器, 反向代理会将RESTful HTTP API翻译为gRPC.![[Pasted image 20240628213521.png|400]]
+gRPC-Gateway是protoc编译器的一个插件, 它读取protobuf的服务定义并生成一个反向代理服务器, 反向代理会将RESTful HTTP API翻译为gRPC.![image](./Pasted%20image%2020240628213521.png)
 gRPC-Gateway帮助一次性同时开发HTTP/JSON和gRPC API. 所以gRPC-Gateway的介绍如下:
 - protobuf编译器的插件
 - 从protobuf中生成代理代码
