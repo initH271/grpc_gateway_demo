@@ -4,5 +4,8 @@ clean:
 generate:
 	buf generate .\proto\helloworld\v1\hello_world.proto
 
+buf-update:
+	buf mod update
+
 run:
-	go run main.go
+	go mod tidy && go run main.go
